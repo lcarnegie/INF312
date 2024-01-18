@@ -1,0 +1,80 @@
+---
+title: "A Bar Chart of "
+author: Luca Carnegie
+thanks: "Code and data are available at: LINK."
+date: today
+date-format: long
+format: pdf
+number-sections: true
+---
+
+## OpenData Toronto
+
+```{r}
+#| echo: false
+#| results: 'hide'
+#| message: false
+#| warning: false
+
+library(opendatatoronto)
+library(tidyverse)
+library(janitor)
+
+	
+# get package
+package <- show_package("2ab20f80-3599-486a-8f8a-9cb59117977c")
+package
+ 
+# get all resources for this package
+resources <- list_package_resources("2ab20f80-3599-486a-8f8a-9cb59117977c")
+ 
+# identify datastore resources; by default, Toronto Open Data sets datastore resource format to CSV for non-geospatial and GeoJSON for geospatial resources
+datastore_resources <- filter(resources, tolower(format) %in% c('csv', 'geojson'))
+ 
+# load the first datastore resource as a sample
+data <- filter(datastore_resources, row_number()==1) %>% get_resource()
+
+# save short-term rental data
+
+# write_csv(
+#  x = data,
+# file = "toronto_short_term_rentals.csv"
+#)
+
+# Read in Data
+rental_data <- 
+  read_csv(
+    file = "toronto_short_term_rentals.csv",
+    show_col_types = FALSE
+  )
+
+# Clean Data 
+
+clean_names(rental_data)
+
+rental_data$property_type |>
+  unique()
+
+cleaned_rental_data <- 
+  rental_data |>
+  mutate(
+    property_type =
+      case_match(
+             property_type,
+            "Condominium" ~ "Condo",
+            "Apartment" ~ "Apartment",
+            "Townhouse/ Row House" ~ "Townhouse", 
+            "Single/Semi-detached House" ~ "Semi-detached", 
+            "Duplex/Triplex/Fourplex" ~ "2/3/4plex"
+          )
+  )
+
+# Plot Data. 
+cleaned_rental_data |>
+  ggplot(aes(x = property_type)) +
+  geom_bar() +
+  theme_minimal() + # Make the theme neater
+  labs(x = "Property Type", y = "Short-Term Rentals") # Make labels more meaningful
+
+
+```
