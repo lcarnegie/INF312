@@ -1,11 +1,12 @@
 ---
-title: "A Bar Chart of "
+title: "Exploring Short-Term Rentals with OpenDataToronto"
 author: Luca Carnegie
-thanks: "Code and data are available at: LINK."
+thanks: "Code and data are available at: https://github.com/lcarnegie/INF312/tree/main/Week%202%20-%20Reproducible%20Workflow/Tutorial%202"
 date: today
 date-format: long
 format: pdf
 number-sections: true
+bibliography: references.bib
 ---
 
 ## OpenData Toronto
@@ -78,3 +79,4 @@ cleaned_rental_data |>
 
 
 ```
+## References {.unnumbered}
