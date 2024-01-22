@@ -1,0 +1,8 @@
+---
+title: "Reflections on Srinivasan, D'Ignazio, and Klein"
+subtitle: "Something something something"
+author: "Luca Carnegie"
+date: "January 24, 2023"
+format: pdf
+editor: visual
+---
