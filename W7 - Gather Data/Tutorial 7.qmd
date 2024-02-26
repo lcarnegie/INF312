@@ -1,0 +1,69 @@
+---
+title: "Tutorial 7: Indian PMs Scraping Example"
+subtitle: "INF312: Worlds Become Data - Prof. Rohan Alexander"
+date: February 27, 2024
+author: "Luca Carnegie"
+thanks: "Code available at: [FILL IN]"
+format: pdf
+number-sections: true
+date-format: long
+editor: visual
+---
+
+### Please redo the web scraping example, but for one of: [Australia](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Australia), [Canada](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Canada), [India](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_India), or [New Zealand](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_New_Zealand). Use Quarto, and include an appropriate title, author, date, link to a GitHub repo, and citations. Submit a PDF. {.unnumbered}
+ 
+### My Choice - India. {.unnumbered}
+
+
+```{r setup}
+#| include: false
+
+library(tidyverse)
+library(babynames)
+
+```
+
+
+
+## I. Simulate Data {#sec-sim}
+
+Our goal is a table that looks somewhat like this: 
+
+![goal](goal.png){width=300}
+
+Moving into the R environment, we are aiming for a table containing the Prime Minister's name, birth year, death year (if they are dead), as well as lifespan (in years). If they are dead, the death year is empty. To simulate, we do exactly as what is done in the textbook.
+
+
+```{r simulate}
+set.seed(853)
+
+simulated_dataset <-
+  tibble(
+    prime_minister = babynames |>
+      filter(prop > 0.01) |>
+      distinct(name) |>
+      unlist() |>
+      sample(size = 10, replace = FALSE),
+    birth_year = sample(1947:1990, size = 10, replace = TRUE),
+    years_lived = sample(50:100, size = 10, replace = TRUE),
+    death_year = birth_year + years_lived
+  ) |>
+  select(prime_minister, birth_year, death_year, years_lived) |>
+  arrange(birth_year)
+
+simulated_dataset
+```
+
+This gives us a good goalpost to aim for as we are scraping data from Wikipedia on Indian Prime Minister data. 
+
+## II. Gathering and Cleaning Data {#sec-cleaning}
+
+## III. Creating the Table {#sec-table}
+
+## IV. Discussion/Reflection {#sec-disc}
+
+### IV.1 Data Source {#subsec1-disc}
+
+### IV.2 My Findings {#subsec2-disc}
+
+### IV.3 Reflections {#subsec3-disc}
