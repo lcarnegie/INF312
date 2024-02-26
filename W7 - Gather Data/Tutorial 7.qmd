@@ -3,14 +3,14 @@ title: "Tutorial 7: Indian PMs Scraping Example"
 subtitle: "INF312: Worlds Become Data - Prof. Rohan Alexander"
 date: February 27, 2024
 author: "Luca Carnegie"
-thanks: "Code available at: [FILL IN]"
+thanks: "Code available at: https://github.com/lcarnegie/INF312/tree/main/W7%20-%20Gather%20Data"
 format: pdf
 number-sections: true
 date-format: long
 editor: visual
 ---
 
-### Please redo the web scraping example, but for one of: [Australia](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Australia), [Canada](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Canada), [India](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_India), or [New Zealand](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_New_Zealand). Use Quarto, and include an appropriate title, author, date, link to a GitHub repo, and citations. Submit a PDF. {.unnumbered}
+Please redo the web scraping example, but for one of: [Australia](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Australia), [Canada](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Canada), [India](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_India), or [New Zealand](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_New_Zealand). Use Quarto, and include an appropriate title, author, date, link to a GitHub repo, and citations. Submit a PDF. {.unnumbered}
  
 ### My Choice - India. {.unnumbered}
 
@@ -25,7 +25,7 @@ library(babynames)
 
 
 
-## I. Simulate Data {#sec-sim}
+## Simulate Data {#sec-sim}
 
 Our goal is a table that looks somewhat like this: 
 
@@ -56,14 +56,18 @@ simulated_dataset
 
 This gives us a good goalpost to aim for as we are scraping data from Wikipedia on Indian Prime Minister data. 
 
-## II. Gathering and Cleaning Data {#sec-cleaning}
+## Gathering and Cleaning Data {#sec-cleaning}
 
-## III. Creating the Table {#sec-table}
+Data is scraped from Wikipedia's list of [Indian Prime Ministers ](https://en.wikipedia.org/wiki/List_of_prime_ministers_of_India)
 
-## IV. Discussion/Reflection {#sec-disc}
+## Creating the Table {#sec-table}
 
-### IV.1 Data Source {#subsec1-disc}
 
-### IV.2 My Findings {#subsec2-disc}
 
-### IV.3 Reflections {#subsec3-disc}
+## Discussion/Reflection {#sec-disc}
+
+### Data Source {#subsec1-disc}
+
+### My Findings {#subsec2-disc}
+
+### Reflections {#subsec3-disc}
