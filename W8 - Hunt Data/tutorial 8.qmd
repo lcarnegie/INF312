@@ -3,7 +3,7 @@ title: "Tutorial 8"
 subtitle: "INF312: Worlds Become Data - Prof. Rohan Alexander"
 author: 
   - Luca Carnege
-thanks: "Code and data are available at: https://github.com/lcarnegie/INF312/tree/main/W8%20-%20Hunt%20Data"
+thanks: "Code and data are available at: "
 date: today
 date-format: long
 format: pdf
